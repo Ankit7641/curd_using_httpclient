@@ -1,0 +1,47 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="Name">Student Name</label>
+      <input type="text" class="form-control" id="Name" formControlName="Name" value="Name" required>
+      <div class="valid-feedback">
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="Rollnumber">Rollnumber</label>
+      <input type="text" class="form-control" id="Rollnumber" formControlName="Rollnumber" value="Rollnumber" required>
+      <div class="valid-feedback">
+      </div>
+    </div>
+    <div formGroupName="address">
+      <h2>Address</h2>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label  for="CurrentAddress">CurrentAddress</label>
+          <input type="text" class="form-control" id="CurrentAddress" formControlName="CurrentAddress" placeholder="CurrentAddress" required>
+          <div class="invalid-feedback">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="PostalAddress">PostalAddress</label>
+            <input type="text" class="form-control" id="PostalAddress" formControlName="PostalAddress" placeholder="PostalAddress" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div formArrayName="skill">
+      <h2>skill</h2>
+      <button class="btn btn-primary" (click)="addskill()">+ Add another skill</button>
+
+      <div *ngFor="let skill of skill.controls; let  i=index" [formControlName]="i">
+
+        <label for="skill-{{ i }}">skill:</label>
+        <input id="skill-{{ i }}" type="text">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid">Submit</button>
+  </div>
+</form>
+
