@@ -1,47 +1,63 @@
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
-      <label for="Name">Student Name</label>
-      <input type="text" class="form-control" id="Name" formControlName="Name" value="Name" required>
-      <div class="valid-feedback">
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="Rollnumber">Rollnumber</label>
-      <input type="text" class="form-control" id="Rollnumber" formControlName="Rollnumber" value="Rollnumber" required>
-      <div class="valid-feedback">
-      </div>
-    </div>
-    <div formGroupName="address">
-      <h2>Address</h2>
-      <div class="form-row">
-        <div class="col-md-4 mb-3">
-          <label  for="CurrentAddress">CurrentAddress</label>
-          <input type="text" class="form-control" id="CurrentAddress" formControlName="CurrentAddress" placeholder="CurrentAddress" required>
-          <div class="invalid-feedback">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-4 mb-3">
-            <label for="PostalAddress">PostalAddress</label>
-            <input type="text" class="form-control" id="PostalAddress" formControlName="PostalAddress" placeholder="PostalAddress" required>
-            <div class="invalid-feedback">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div formArrayName="skill">
-      <h2>skill</h2>
-      <button class="btn btn-primary" (click)="addskill()">+ Add another skill</button>
+<form [formGroup]="skillsForm" (ngSubmit)="onSubmit()">
+ 
+  <div class="mb-3">
+    <div class="form-group">
 
-      <div *ngFor="let skill of skill.controls; let  i=index" [formControlName]="i">
-
-        <label for="skill-{{ i }}">skill:</label>
-        <input id="skill-{{ i }}" type="text">
-      </div>
+    <label for="name" class="form-label"> Name</label>
+    <input  type="text" class="form-control" id="name" name="name" formControlName="name" placeholder="Enter Your Name" required >
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid">Submit</button>
+    <span class="text-danger"
+    *ngIf="(registerFormControl.name.touched || submitted) && registerFormControl.name.errors?.required">
+    Name is required
+</span>
   </div>
-</form>
 
+  <div class="mb-3">
+    <div class="form-group">
+    <label for="rollno" class="form-label"> Rollno</label>
+    <input type="text" class="form-control" id="rollno" name="rollno" formControlName="rollno" placeholder="Enter Your RollNo" required>
+  </div>
+  <span class="text-danger"
+    *ngIf="(registerFormControl.rollno.touched || submitted) && registerFormControl.rollno.errors?.required">
+    RollNo is required
+</span>
+</div>
+
+  <div class="mb-3">
+    <div class="form-group">
+    <label for="address" class="form-label"> Address</label>
+    <input type="text" class="form-control" id="address" name="address" formControlName="address" placeholder="Enter Your Address" required>
+  </div>
+  <span class="text-danger"
+  *ngIf="(registerFormControl.address.touched || submitted) && registerFormControl.address.errors?.required">
+  Address is required
+</span>
+  </div>
+ 
+  <div class="mb-3">
+    <label for="skill" class="form-label"> Skills:</label>
+  <div formArrayName="skills">
+    <div *ngFor="let skill of skills.controls; let i=index">
+      <div [formGroupName]="i">
+        skill name :
+        <input class="form-control" type="text" formControlName="skill" placeholder="Enter Your Skill"  required>
+        Experience:
+        <input class="form-control" type="text" formControlName="exp" placeholder="Enter Your Experience in skill" required>
+ 
+        <button (click)="removeSkill(i)">Remove</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  <p>
+    <button type="button" class="btn btn-primary"  (click)="addSkills()">Add Skill</button>
+  </p>
+ 
+  <p>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </p>
+ 
+</form>
+ 
+{{this.skillsForm.value | json}}
+ 

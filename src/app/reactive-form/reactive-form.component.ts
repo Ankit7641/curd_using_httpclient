@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -8,33 +8,66 @@ import { FormArray, FormBuilder, Validators } from '@angular/forms';
 })
 export class ReactiveFormComponent implements OnInit {
 
-  profileForm = this.Formbuldier.group({
-    Name: ['', Validators.required],
-    Rollnumber: [''],
-    address: this.Formbuldier.group({}),
-    skill: this.Formbuldier.array([
-      this.Formbuldier.control('')
-    ])
-  });
-
-
-  get skill() {
-    return this.profileForm.get('skill') as FormArray;
-  }
-
-  constructor(
-    private Formbuldier: FormBuilder
-  ) { }
-
-  ngOnInit(): void {
-  }
-
+  title = 'FormArray Example in Angular Reactive forms';
+ 
+  skillsForm: FormGroup;
+  submitted = false;
+ 
+  constructor(private fb:FormBuilder) {
+ 
+    this.skillsForm = this.fb.group({
+      name: ['',Validators.required],
+      rollno: ['',Validators.required,Validators.pattern("^[0-9]*$"),Validators.minLength(2)],
+      address: ['',Validators.required],
+      skills: this.fb.array([]) ,
+    });
   
-  addskill() {
-    this.skill.push(this.Formbuldier.control(''));
   }
+  ngOnInit(): void {
 
+   }
+
+   get registerFormControl() {
+    return this.skillsForm.controls;
+  }
+  
+ 
+  get skills() : FormArray {
+    return this.skillsForm.get("skills") as FormArray
+  }
+ 
+  newSkill(): FormGroup {
+    return this.fb.group({
+      skill: ['',Validators.required],
+      exp: ['',Validators.required],
+    })
+  }
+ 
+  addSkills() {
+    this.skills.push(this.newSkill());
+  }
+ 
+  removeSkill(i:number) {
+    this.skills.removeAt(i);
+  }
+ 
   onSubmit() {
-    console.log(this.profileForm.value);
+    console.log(this.skillsForm.value);
+  }
+ 
+}
+ 
+ 
+export class country {
+  id: string;
+  name: string;
+  rollno: string;
+  address: string;
+ 
+  constructor(id: string, name: string, rollno: string, address: string) {
+    this.id = id;
+    this.name = name;
+    this.rollno = rollno;
+    this.address = address;
   }
 }
