@@ -11,6 +11,7 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     EmployeeEditComponent,
     EmployeeListComponent,
     ReactiveFormComponent
+
+
   ],
   imports: [
     BrowserModule,

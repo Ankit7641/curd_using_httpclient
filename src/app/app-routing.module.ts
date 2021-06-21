@@ -10,7 +10,14 @@ const routes: Routes = [
   { path: 'create-employee', component: EmployeeCreateComponent },
   { path: 'employees-list', component: EmployeeListComponent },
   { path: 'employee-edit/:id', component: EmployeeEditComponent },
-  { path: 'reactive-form', component: ReactiveFormComponent}
+  { path: 'reactive-form', component: ReactiveFormComponent},
+  { path:'behavior-subject',
+    loadChildren: () => import('./behaviour-subject/behaviour-subject.module').then(m => m.BehaviourSubjectModule)
+  },
+  {
+    path:'subject',
+    loadChildren: () => import('./subject/subject.module').then(m => m.SubjectModule)
+  },
 ];
 
 @NgModule({
