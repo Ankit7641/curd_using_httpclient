@@ -1,0 +1,22 @@
+<p>mapobservable works!</p>
+<h3 class="mb-3 text-center">Data List Using observable Map</h3>
+   
+  <div class="col-md-12">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th> Name</th>
+          <th>Email</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of emp">
+          <td>{{emp.id}}</td>
+          <td>{{emp.name}}</td>
+          <td>{{emp.email}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

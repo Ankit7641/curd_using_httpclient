@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CombinelatestComponent } from './combinelatest/combinelatest.component';
+import { ConcatmapComponent } from './concatmap/concatmap.component';
 import { EmployeeCreateComponent } from './employee-create/employee-create.component';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { SwitchmapComponent } from './switchmap/switchmap.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'create-employee' },
@@ -18,6 +21,13 @@ const routes: Routes = [
     path:'subject',
     loadChildren: () => import('./subject/subject.module').then(m => m.SubjectModule)
   },
+  {
+    path:'mapobservable',
+    loadChildren: () => import('./mapobservable/mapobservable.module').then(m => m.MapobservableModule)
+  },
+  { path: 'switchMAp', component: SwitchmapComponent},
+  { path: 'Concatmap', component: ConcatmapComponent},
+  { path: 'combinelatest', component: CombinelatestComponent}
 ];
 
 @NgModule({

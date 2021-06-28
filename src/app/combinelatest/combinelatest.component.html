@@ -1,0 +1,12 @@
+<p>combinelatest works!</p>
+<div id="app" style="width: 100%; position:relative">
+    <div style="width: 50%;  position: absolute; left: 0; top: 0;">
+      <h2>Normal</h2>
+      <span *ngFor="let item of normal" [innerHtml]="item"></span>
+    </div>
+    
+    <div style="width: 50%; position: absolute; right: 0; top: 0;">
+      <h2>CombineLatest</h2>
+      <span *ngFor="let item of cLatest" [innerHtml]="item"></span>
+    </div>
+    </div>

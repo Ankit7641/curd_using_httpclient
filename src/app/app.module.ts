@@ -10,7 +10,9 @@ import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
-
+import { SwitchmapComponent } from './switchmap/switchmap.component';
+import { ConcatmapComponent } from './concatmap/concatmap.component';
+import { CombinelatestComponent } from './combinelatest/combinelatest.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,10 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     EmployeeCreateComponent,
     EmployeeEditComponent,
     EmployeeListComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    SwitchmapComponent,
+    ConcatmapComponent,
+    CombinelatestComponent
 
 
   ],
