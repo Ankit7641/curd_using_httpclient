@@ -14,6 +14,7 @@ import { SwitchmapComponent } from './switchmap/switchmap.component';
 import { ConcatmapComponent } from './concatmap/concatmap.component';
 import { CombinelatestComponent } from './combinelatest/combinelatest.component';
 import { MVPcustomerComponent } from './mvpcustomer/mvpcustomer.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MVPcustomerComponent } from './mvpcustomer/mvpcustomer.component';
     SwitchmapComponent,
     ConcatmapComponent,
     CombinelatestComponent,
-    MVPcustomerComponent
+    MVPcustomerComponent,
+    FilterPipe
 
 
   ],

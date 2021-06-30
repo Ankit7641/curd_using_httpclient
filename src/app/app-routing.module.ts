@@ -27,7 +27,8 @@ const routes: Routes = [
   },
   { path: 'switchMAp', component: SwitchmapComponent},
   { path: 'Concatmap', component: ConcatmapComponent},
-  { path: 'combinelatest', component: CombinelatestComponent}
+  { path: 'combinelatest', component: CombinelatestComponent},
+  { path: 'customer', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) }
 ];
 
 @NgModule({

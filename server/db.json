@@ -18,5 +18,26 @@
       "phone": "9852147630",
       "id": 3
     }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Tony Stark1",
+      "salary": "15000",
+      "Isgreatersalary": "True"
+    },
+    {
+      "id": 2,
+      "name": "Black Widow",
+      "salary": "10000",
+      "Isgreatersalary": "True"
+    },
+    {
+      "id": 3,
+      "name": "Pranav",
+      "salary": "9000",
+      "Isgreatersalary": "False"
+      
+    }
   ]
 }
