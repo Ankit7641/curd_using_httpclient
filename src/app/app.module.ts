@@ -13,10 +13,7 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { SwitchmapComponent } from './switchmap/switchmap.component';
 import { ConcatmapComponent } from './concatmap/concatmap.component';
 import { CombinelatestComponent } from './combinelatest/combinelatest.component';
-import { CustomermvpComponent } from './customermvp/customermvp.component';
-import { CustomerComponent } from './customermvp/customer/customer.component';
-import { CustomerlistComponent } from './customermvp/customerlist/customerlist.component';
-
+import { MVPcustomerComponent } from './mvpcustomer/mvpcustomer.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +25,7 @@ import { CustomerlistComponent } from './customermvp/customerlist/customerlist.c
     SwitchmapComponent,
     ConcatmapComponent,
     CombinelatestComponent,
-    CustomermvpComponent,
-    CustomerComponent,
-    CustomerlistComponent
+    MVPcustomerComponent
 
 
   ],
