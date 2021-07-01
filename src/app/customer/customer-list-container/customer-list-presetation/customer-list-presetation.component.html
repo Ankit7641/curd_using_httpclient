@@ -1,19 +1,24 @@
 <p>customer-list-presetation works!</p>
-<button class="btn btn-outline-danger m-1" data-toggle="tooltip" data-placement="right" title="add" routerLink='add'>
+<!-- <button class="btn btn-outline-danger m-1" data-toggle="tooltip" data-placement="right" title="add" routerLink='add'>
     Add Customer
-  </button>
+  </button> -->
   
   <table class="table table-stripede border border-secondary ">
       <thead class="thead-light">
+        <th>Id</th>
         <th>Name</th>
         <th>salary</th>
+        <th> Greater Salary</th>
         <th class="text-center">Action</th>
       </thead>
       <tbody>
     
         <tr *ngFor="let customerListItem of customerList">
+          <td>{{customerListItem.id}}</td>
           <td>{{customerListItem.name}}</td>
-          <td>{{customerListItem.salary}}</td>
+          <td>{{customerListItem.salary}}</td> 
+          <td>{{customerListItem.salary >= 10000  ? 'True' : 'False'}} </td>
+          
           <td class="text-center">
             <!-- <button class="btn btn-outline-primary m-1" data-toggle="tooltip" data-placement="right" title="Edit" [routerLink]="['/product/edit/']+customer.id">
               edit

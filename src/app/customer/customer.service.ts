@@ -8,25 +8,6 @@ export class CustomerService {
 
   apiURL = 'http://localhost:3000';
 
-  public customerList:Customer[]=[
-    {
-      id:1,
-      name:'abc',
-      salary:'10000'
-    },
-    {
-      id:2,
-      name:'abc',
-      salary:'20000'
-    },
-    {
-      id:3,
-      name:'abc',
-      salary:'9000'
-    }
-  ]
-
-
   constructor(private http: HttpClient) { }
 
   httpOptions = {
@@ -35,11 +16,13 @@ export class CustomerService {
     })
   } 
 
-  public getCustomers():Observable<Customer[]>{
-    return of(this.customerList)
+  getCustomers():Observable<Customer>{
+    console.log(Customer)
+    return this.http.get<Customer>(this.apiURL + '/customer');
   }
 
-  public deleteCustomer(value:number):Observable<any>{
-    return of(true)
+  deleteCustomer(id: number){
+    return this.http.delete<Customer>(this.apiURL + '/customer/' + id, this.httpOptions)
+
   }
 }

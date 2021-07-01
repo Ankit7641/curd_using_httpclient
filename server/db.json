@@ -19,24 +19,24 @@
       "id": 3
     }
   ],
-  "customers": [
+  "customer": [
     {
       "id": 1,
       "name": "Tony Stark1",
       "salary": "15000",
-      "Isgreatersalary": "True"
+      "greatersalary": "True"
     },
     {
       "id": 2,
       "name": "Black Widow",
       "salary": "10000",
-      "Isgreatersalary": "True"
+      "greatersalary": "True"
     },
     {
       "id": 3,
       "name": "Pranav",
       "salary": "9000",
-      "Isgreatersalary": "False"
+      "greatersalary": "False"
       
     }
   ]

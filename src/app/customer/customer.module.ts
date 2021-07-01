@@ -9,6 +9,7 @@ import { CustomerListContainerComponent } from './customer-list-container/custom
 import { CustomerListPresetationComponent } from './customer-list-container/customer-list-presetation/customer-list-presetation.component';
 import { CustomerService } from './customer.service';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     CustomerRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers:[
     CustomerService

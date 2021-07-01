@@ -13,15 +13,7 @@ export class CustomerListPresenterService {
   }
 
   
-  public bindForm() {
-    return new FormGroup({
-      id: new FormControl(),
-      name: new FormControl(),
-    })
-  }
-
   public deleteCustomer(value: number) {
-    debugger
     console.log('delete', value);
     this.customerId.next(value);
   }
