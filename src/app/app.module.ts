@@ -15,6 +15,7 @@ import { ConcatmapComponent } from './concatmap/concatmap.component';
 import { CombinelatestComponent } from './combinelatest/combinelatest.component';
 import { MVPcustomerComponent } from './mvpcustomer/mvpcustomer.component';
 import { FilterPipe } from './filter.pipe';
+import { ForkjoinComponent } from './forkjoin/forkjoin.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FilterPipe } from './filter.pipe';
     ConcatmapComponent,
     CombinelatestComponent,
     MVPcustomerComponent,
-    FilterPipe
+    FilterPipe,
+    ForkjoinComponent
 
 
   ],

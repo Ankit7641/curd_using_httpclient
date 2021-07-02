@@ -5,6 +5,7 @@ import { ConcatmapComponent } from './concatmap/concatmap.component';
 import { EmployeeCreateComponent } from './employee-create/employee-create.component';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { ForkjoinComponent } from './forkjoin/forkjoin.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { SwitchmapComponent } from './switchmap/switchmap.component';
 
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'switchMAp', component: SwitchmapComponent},
   { path: 'Concatmap', component: ConcatmapComponent},
   { path: 'combinelatest', component: CombinelatestComponent},
-  { path: 'customer', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) }
+  { path: 'customer', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) },
+  { path: 'forkjoin', component: ForkjoinComponent},
 ];
 
 @NgModule({

@@ -6,19 +6,21 @@
   <div class="col-md-12">
   <table class="table table-bordered">
       <thead class="thead-light">
+        <tr>
         <th scope="col">Id</th>
         <th scope="col">Name</th>
         <th scope="col">salary</th>
         <th scope="col"> Greater Salary</th>
         <th scope="col">Action</th>
+      </tr>
       </thead>
-      <tbody>
+      <tbody *ngFor="let customerListItem of customerList; let i=index" >
     
-        <tr *ngFor="let customerListItem of customerList">
+        <tr [style.background]="customerListItem.salary >= 10000? 'lightblue': 'white'"  >
           <td>{{customerListItem.id}}</td>
           <td>{{customerListItem.name}}</td>
           <td>{{customerListItem.salary}}</td> 
-          <td>{{customerListItem.salary >= 10000  ? 'True' : 'False'}} </td>
+          <td> {{customerListItem.salary >= 10000 ? 'True'  : 'False'}} </td>
           
           <td class="text-center">
             <!-- <button class="btn btn-outline-primary m-1" data-toggle="tooltip" data-placement="right" title="Edit" [routerLink]="['/product/edit/']+customer.id">
