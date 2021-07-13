@@ -31,6 +31,7 @@ const routes: Routes = [
   { path: 'combinelatest', component: CombinelatestComponent},
   { path: 'customer', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) },
   { path: 'forkjoin', component: ForkjoinComponent},
+  { path: 'ngtemplate', loadChildren: () => import('./ngtemplate/ngtemplate.module').then(m => m.NgtemplateModule) }
 ];
 
 @NgModule({

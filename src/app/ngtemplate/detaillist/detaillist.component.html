@@ -1,0 +1,15 @@
+<p>detaillist works!</p>
+<ng-template #detail>
+	<ng-content></ng-content>
+</ng-template>
+
+<div class="outer">
+	Outer Box :
+	<ng-template [ngTemplateOutlet]="detail" *ngIf="outside"></ng-template>
+	<div class="inner">
+		Inner Box :
+		<ng-template [ngTemplateOutlet]="detail" *ngIf="!outside"></ng-template>
+	</div>
+</div>
+
+<button (click)="outside = !outside">Move {{ outside ? 'inside' : 'outside' }}</button>
