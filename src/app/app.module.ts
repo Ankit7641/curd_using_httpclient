@@ -16,6 +16,12 @@ import { CombinelatestComponent } from './combinelatest/combinelatest.component'
 import { MVPcustomerComponent } from './mvpcustomer/mvpcustomer.component';
 import { FilterPipe } from './filter.pipe';
 import { ForkjoinComponent } from './forkjoin/forkjoin.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CDKExampleComponent, ComponentPortalExample } from './cdkexample/cdkexample.component';
+import { CdkDropList, DragDropModule } from '@angular/cdk/drag-drop';
+import { CdkPortalOutlet, PortalModule } from '@angular/cdk/portal';
+import { CdkScrollableModule, CdkVirtualScrollViewport, ScrollingModule } from '@angular/cdk/scrolling';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +35,9 @@ import { ForkjoinComponent } from './forkjoin/forkjoin.component';
     CombinelatestComponent,
     MVPcustomerComponent,
     FilterPipe,
-    ForkjoinComponent
+    ForkjoinComponent,
+    CDKExampleComponent,
+    ComponentPortalExample
 
 
   ],
@@ -38,9 +46,14 @@ import { ForkjoinComponent } from './forkjoin/forkjoin.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    DragDropModule,
+    PortalModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

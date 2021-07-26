@@ -7,11 +7,12 @@ import { Component, OnInit,TemplateRef, ViewChild } from '@angular/core';
 })
 export class DetaillistComponent implements OnInit {
 
+
   constructor() { }
   outside = true;
 
   ngOnInit(): void {
   }
   
-
+  
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CDKExampleComponent } from './cdkexample/cdkexample.component';
 import { CombinelatestComponent } from './combinelatest/combinelatest.component';
 import { ConcatmapComponent } from './concatmap/concatmap.component';
 import { EmployeeCreateComponent } from './employee-create/employee-create.component';
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path: 'combinelatest', component: CombinelatestComponent},
   { path: 'customer', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) },
   { path: 'forkjoin', component: ForkjoinComponent},
-  { path: 'ngtemplate', loadChildren: () => import('./ngtemplate/ngtemplate.module').then(m => m.NgtemplateModule) }
+  { path: 'ngtemplate', loadChildren: () => import('./ngtemplate/ngtemplate.module').then(m => m.NgtemplateModule) },
+  { path: 'cdk', component: CDKExampleComponent},
 ];
 
 @NgModule({
