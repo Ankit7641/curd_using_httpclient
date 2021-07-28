@@ -11,6 +11,37 @@
       "name": "Black Widow",
       "email": "black-window@mcu.com",
       "phone": "001-123-4568"
+    },
+    {
+      "name": "Pranav",
+      "email": "pranav@gmail.com",
+      "phone": "9852147630",
+      "id": 3
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "name": "Tony Stark1",
+      "salary": "15000"
+
+    },
+    {
+      "id": 4,
+      "name": "Amar",
+      "salary": "8000"
+
+    },
+    {
+      "id": 2,
+      "name": "Black Widow",
+      "salary": "10000"
+    },
+    {
+      "id": 3,
+      "name": "Pranav",
+      "salary": "9000"
+      
     }
   ]
 }

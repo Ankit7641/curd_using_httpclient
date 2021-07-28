@@ -8,7 +8,11 @@
   </div>
 
   <!-- Employees list table, it hides when there is no employee -->
-  <div *ngIf="Employee.length !== 0">
+  <div class="form-group mb-4">
+    <input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Search">
+  </div>
+
+  <div *ngIf="(Employee | filter: searchText).length !== 0">
     <h3 class="mb-3 text-center">Employees List</h3>
 
     <div class="col-md-12">
@@ -23,7 +27,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let employee of Employee">
+          <tr *ngFor="let employee of Employee | filter: searchText; let i = index">
             <td>{{employee.id}}</td>
             <td>{{employee.name}}</td>
             <td>{{employee.email}}</td>

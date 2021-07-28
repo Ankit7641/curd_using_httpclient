@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { RestApiService } from "../shared/rest-api.service";
 
 @Component({
@@ -9,6 +9,7 @@ import { RestApiService } from "../shared/rest-api.service";
 export class EmployeeListComponent implements OnInit {
 
   Employee: any = [];
+  searchText!: string;
 
   constructor(
     public restApi: RestApiService

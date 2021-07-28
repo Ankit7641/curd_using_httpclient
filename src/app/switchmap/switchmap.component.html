@@ -1,0 +1,18 @@
+<p>switchmap works!</p>
+<h1 style="font-size: 100px; text-align: center;">{{counter}}</h1>
+<label for=""> Search</label>
+<input type="text" [formControl]="search">
+<div style="display: flex;">
+  <div>
+    <h2>Array1</h2>
+    <div *ngFor="let item of array1">
+      <p>{{item}}</p>
+    </div>
+  </div>
+  <div style="margin-left: 20px;">
+    <h2>Array2</h2>
+    <div *ngFor="let item of array2">
+      <p>{{item}}</p>
+    </div>
+  </div>
+</div>
